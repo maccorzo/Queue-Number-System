@@ -10,4 +10,4 @@
 
 - React
 - Stylus for css
-- Firebase back end (hosting and database)
+- Firebase backend (hosting and database)
