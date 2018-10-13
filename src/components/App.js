@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Route, Switch } from 'react-router';
 
-import '../App.css';
+import '../static/css/style.css';
 import Board from './Board'
 
 class App extends Component {
