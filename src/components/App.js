@@ -3,6 +3,7 @@ import { Route, Switch } from 'react-router';
 
 import '../static/css/style.css';
 import Board from './Board'
+import Machine from './Machine'
 
 class App extends Component {
   state = {
@@ -19,8 +20,8 @@ class App extends Component {
           <Route exact path="/">
             <Board activeNumber={this.state.activeNumber} />
           </Route>
-          <Route exact path="/about">
-            <div>Route /about</div>
+          <Route exact path="/machine">
+            <Machine />
           </Route>
         </Switch>
       </div>
