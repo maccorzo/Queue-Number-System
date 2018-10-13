@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Route, Switch } from 'react-router';
 
 import '../App.css';
+import Board from './Board'
 
 class App extends Component {
   render() {
@@ -10,7 +11,7 @@ class App extends Component {
         <header>link link link</header>
         <Switch>
           <Route exact path="/">
-            <div>Route /</div>
+            <Board />
           </Route>
           <Route exact path="/about">
             <div>Route /about</div>
