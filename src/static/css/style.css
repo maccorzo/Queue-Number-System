@@ -1,1 +1,1 @@
-body{background:#ddd}
+html,body{margin:0;padding:0}.App{font-family:'Avenir',Helvetica,Arial,sans-serif;display:grid;grid-template-rows:100px 1fr;grid-template-columns:1fr;align-items:center;justify-items:center;height:100vh;text-align:center;}.nav{padding:10px;}.nav a{font-weight:bold;color:#2c3e50;}.nav a.router-link-exact-active{color:#42b983}.board{margin:0;padding:0}.board__active-number{color:#232323;font-size:33vw;margin:0;padding:0;width:100%;text-align:center;border:0}
