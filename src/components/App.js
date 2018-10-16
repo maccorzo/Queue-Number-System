@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Route, Switch } from 'react-router';
+import { Route, Switch, Link } from 'react-router-dom';
 
 import '../static/css/style.css';
 import Board from './Board'
@@ -26,7 +26,11 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="nav">link link link</header>
+        <header className="navigation">
+          <Link to="/">Board</Link>
+          <Link to="/machine">Machine</Link>
+          <Link to="/agent">Agent</Link>
+        </header>
         <Switch>
           <Route exact path="/">
             <Board activeNumber={this.state.activeNumber} />
