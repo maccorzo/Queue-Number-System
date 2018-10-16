@@ -8,8 +8,18 @@ import Machine from './Machine'
 class App extends Component {
   state = {
     activeNumber: 1042,
-    largestNumber: 1001,
-    queue: [],
+    largestNumber: 1043,
+    queue: {},
+  }
+
+  addToQueue = number => {
+    const queue = { ...this.state.queue }
+    queue[number.start] = number;
+    const largestNumber = parseInt(number.number, 10) + 1;
+    this.setState({
+      queue,
+      largestNumber
+    })
   }
 
   render() {
@@ -21,7 +31,11 @@ class App extends Component {
             <Board activeNumber={this.state.activeNumber} />
           </Route>
           <Route exact path="/machine">
-            <Machine />
+            <Machine
+              queue={this.state.queue}
+              largestNumber={this.state.largestNumber}
+              addToQueue={this.addToQueue}
+            />
           </Route>
         </Switch>
       </div>
