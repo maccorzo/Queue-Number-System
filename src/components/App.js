@@ -4,6 +4,7 @@ import { Route, Switch } from 'react-router';
 import '../static/css/style.css';
 import Board from './Board'
 import Machine from './Machine'
+import Agent from './Agent'
 
 class App extends Component {
   state = {
@@ -29,6 +30,13 @@ class App extends Component {
         <Switch>
           <Route exact path="/">
             <Board activeNumber={this.state.activeNumber} />
+          </Route>
+          <Route exact path="/agent">
+            <Agent
+              queue={this.state.queue}
+              largestNumber={this.state.largestNumber}
+              removeFromQueue={this.removeFromQueue}
+            />
           </Route>
           <Route exact path="/machine">
             <Machine
