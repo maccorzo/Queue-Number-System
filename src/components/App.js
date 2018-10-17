@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Route, Switch, Link } from 'react-router-dom';
 
+import base from '../base';
+
 import '../static/css/style.css';
 import Board from './Board'
 import Machine from './Machine'
@@ -12,6 +14,22 @@ class App extends Component {
     largestNumber: 1043,
     queue: {},
   }
+
+  componentDidMount() {
+    this.ref = base.syncState('queue', {
+      context: this,
+      state: 'queue',
+      query: ref => {
+        return ref
+          .where('active', '==', true)
+          .orderBy('start');
+      }
+    })
+  }
+
+  componentWillUnmount = () => {
+    base.removeBinding(this.ref);
+  };
 
   addToQueue = number => {
     const queue = { ...this.state.queue }
