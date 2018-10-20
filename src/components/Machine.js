@@ -1,11 +1,13 @@
 import React from 'react';
 
 class Machine extends React.Component {
-  createNewNumber = event => {
+
+
+  createNewTicket = event => {
     event.preventDefault();
     const number = {
       active: true,
-      number: this.props.largestNumber,
+      number: 1,
       start: Date.now(),
       stop: 0,
       waitingTime: 0,
@@ -15,10 +17,9 @@ class Machine extends React.Component {
   render() {
     return (
       <div>
-        <form onSubmit={this.createNewNumber} className="machine">
+        <form onSubmit={this.createNewTicket} className="machine">
           <div>Number</div>
           <div className="machine__number">
-            {this.props.largestNumber.toString().slice(-3)}
           </div>
           <button type="submit" className="machine__button">Take a new number</button>
           <div>Queue: {Object.keys(this.props.queue).length}</div>
