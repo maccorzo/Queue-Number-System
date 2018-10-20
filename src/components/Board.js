@@ -9,7 +9,7 @@ class Board extends React.Component {
           className="board__active-number"
           readOnly
           value={this.props.activeNumber
-            ? this.props.activeNumber
+            ? this.props.activeNumber.toString().slice(-3)
             : '000'}
         />
       </div>
