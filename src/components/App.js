@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Route, Switch, Link } from 'react-router-dom';
+import { Route, Switch, NavLink } from 'react-router-dom';
 
 import base from '../base';
 
@@ -38,8 +38,8 @@ class App extends Component {
       queue,
     })
   }
-
   addToQueue = ticket => {
+
     const queue = { ...this.state.ticket }
     queue[ticket.start] = ticket;
     queue["largestNumber"] = parseInt(ticket.number, 10) + 1;
@@ -85,12 +85,12 @@ class App extends Component {
     return (
       <div className="App">
         <header className="navigation">
-          <Link to="/">Board</Link>
-          <Link to="/machine">Machine</Link>
-          <Link to="/agent">Agent</Link>
+          <NavLink to="/board" activeClassName="link--active">Board</NavLink>
+          <NavLink to="/machine" activeClassName="link--active">Machine</NavLink>
+          <NavLink to="/agent" activeClassName="link--active">Agent</NavLink>
         </header>
         <Switch>
-          <Route exact path="/">
+          <Route exact path="/board">
             <Board
               activeNumber={this.state.queue.activeNumber}
             />
