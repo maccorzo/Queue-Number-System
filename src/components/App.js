@@ -74,13 +74,6 @@ class App extends Component {
     return 'empty'
   }
 
-  getLargestNumber = () => {
-    const number = this.state.queue[Object.keys(this.state.queue)[Object.keys(this.state.queue).length - 1]]
-    console.log(number);;
-  }
-
-
-
   render() {
     return (
       <div className="App">
