@@ -53,6 +53,7 @@ html, body
 .machine__number
   background url("https://res.cloudinary.com/maccorzo/image/upload/v1539974724/qns/number.svg") no-repeat center center
   height 210px
+  min-width 250px
   text-align center
   font-size 4rem
   display flex
@@ -63,11 +64,15 @@ html, body
 .machine__button
   font-size 2rem
   padding 1rem
-  border-radius 10px
-  box-shadow 0 2px 5px #555
-  background-color #eee
+  border-radius 2px
+  box-shadow 0 1px 2px #555
   border 2px solid #666
 
+.machine__button:hover
+  background-color #eee
+
+.machine__button:active
+  background-color #fee
 // agent.styl
 
 .agent
