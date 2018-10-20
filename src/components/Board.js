@@ -8,8 +8,8 @@ class Board extends React.Component {
           type="text"
           className="board__active-number"
           readOnly
-          value={this.props.showNextServedTicket() !== 'empty'
-            ? this.props.showNextServedTicket() - 1
+          value={this.props.activeNumber
+            ? this.props.activeNumber
             : '000'}
         />
       </div>

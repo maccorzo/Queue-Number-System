@@ -10,10 +10,7 @@ import Agent from './Agent'
 
 class App extends Component {
   state = {
-    activeNumber: 1042,
-    largestNumber: 1043,
     queue: {},
-    ready: {},
   }
 
   componentDidMount() {
@@ -27,13 +24,27 @@ class App extends Component {
     base.removeBinding(this.ref);
   };
 
+  initializeSystem = () => {
+    const queue = { ...this.state.ticket }
+    const firstTicket = {
+      active: true,
+      number: 1001,
+      start: Date.now(),
+      stop: 0,
+      waitingTime: 0,
+    }
+    queue[firstTicket.start] = firstTicket;
+    this.setState({
+      queue,
+    })
+  }
+
   addToQueue = ticket => {
     const queue = { ...this.state.ticket }
     queue[ticket.start] = ticket;
-    const largestNumber = parseInt(ticket.number, 10) + 1;
+    queue["largestNumber"] = parseInt(ticket.number, 10) + 1;
     this.setState({
       queue,
-      largestNumber
     })
   }
 
@@ -45,6 +56,7 @@ class App extends Component {
       queue[ticketId].active = false;
       queue[ticketId].stop = Date.now();
       queue[ticketId].waitingTime = queue[ticketId].stop - queue[ticketId].start;
+      queue['activeNumber'] = queue[ticketId].number;
       this.setState({ queue })
     }
   }
@@ -80,8 +92,7 @@ class App extends Component {
         <Switch>
           <Route exact path="/">
             <Board
-              activeNumber={this.state.activeNumber}
-              showNextServedTicket={this.showNextServedTicket}
+              activeNumber={this.state.queue.activeNumber}
             />
           </Route>
           <Route exact path="/agent">
@@ -98,6 +109,7 @@ class App extends Component {
               queue={this.state.queue}
               largestNumber={this.state.largestNumber}
               addToQueue={this.addToQueue}
+              getActiveQueue={this.getActiveQueue}
               getLargestNumber={this.getLargestNumber}
             />
           </Route>

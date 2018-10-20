@@ -7,7 +7,7 @@ class Machine extends React.Component {
     event.preventDefault();
     const number = {
       active: true,
-      number: 1,
+      number: this.props.queue.largestNumber,
       start: Date.now(),
       stop: 0,
       waitingTime: 0,
@@ -20,9 +20,10 @@ class Machine extends React.Component {
         <form onSubmit={this.createNewTicket} className="machine">
           <div>Number</div>
           <div className="machine__number">
+            {this.props.queue.largestNumber}
           </div>
           <button type="submit" className="machine__button">Take a new number</button>
-          <div>Queue: {Object.keys(this.props.queue).length}</div>
+          <div>Queue: {this.props.getActiveQueue().length}</div>
           <div>
             Waiting time:
           </div>
