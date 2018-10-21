@@ -78,11 +78,7 @@ class App extends Component {
       const ticketId = activeQueue[0];
       return this.state.queue.tickets[ticketId].number
     }
-    return 'empty'
-  }
-
-  formatNumber = (number, digits = 3) => {
-    return number.toString.slice(digits);
+    return '---';
   }
 
   render() {
