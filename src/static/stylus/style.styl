@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Exo+2');
 
 // leave in this file 
 html, body
@@ -17,6 +18,10 @@ html, body
 .link--active
   font-weight 800
   color red
+
+button:hover
+  cursor pointer
+
 
   /**
   -webkit-font-smoothing antialiased
@@ -44,6 +49,7 @@ html, body
   width 100%
   text-align center
   border 0
+  font-family Exo 2
 
   // machine.style
 .machine
@@ -60,7 +66,6 @@ html, body
   align-items center
   justify-content center
 
-
 .machine__button
   font-size 2rem
   padding 1rem
@@ -68,8 +73,13 @@ html, body
   box-shadow 0 1px 2px #555
   border 2px solid #666
 
+button
+  border 0
+
 .machine__button:hover
   background-color #eee
+
+  
 
 .machine__button:active
   background-color #fee
@@ -83,6 +93,7 @@ html, body
   grid-template-columns: auto 1fr
   grid-gap 1rem
   justify-items end
+  
 label
   justify-self left
 
@@ -95,8 +106,13 @@ label
 .agent__button
   font-size 2rem
   padding 1rem
-  border-radius 10px
-  background-color #eee
+  border-radius 2px
   border 2px solid #666
-  box-shadow 0 2px 5px #555
+  box-shadow 0 1px 2px #555
   grid-column span 2
+
+.agent__button:hover
+  background-color #eee
+
+.agent__button:active
+  background-color #fee
