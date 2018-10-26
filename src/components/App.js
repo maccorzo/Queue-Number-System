@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Route, Switch, NavLink } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 
 import base from '../base';
 
@@ -7,6 +7,7 @@ import '../static/css/style.css';
 import Board from './Board'
 import Machine from './Machine'
 import Agent from './Agent'
+import Navigation from './Navigation'
 
 class App extends Component {
   state = {
@@ -84,11 +85,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="navigation">
-          <NavLink to="/board" activeClassName="link--active">Board</NavLink>
-          <NavLink to="/machine" activeClassName="link--active">Machine</NavLink>
-          <NavLink to="/agent" activeClassName="link--active">Agent</NavLink>
-        </header>
+        <Navigation />
         <Switch>
           <Route exact path="/">
             <button onClick={this.initializeSystem}>initialize</button>

@@ -7,7 +7,7 @@ html, body
 .App
   font-family 'Avenir', Helvetica, Arial, sans-serif
   display grid
-  grid-template-rows 100px 1fr
+  grid-template-rows auto 1fr
   grid-template-columns 1fr
   align-items center
   justify-items center
@@ -15,9 +15,6 @@ html, body
   text-align center
 
 
-.link--active
-  font-weight 800
-  color red
 
 button
   background-color #fff
@@ -119,3 +116,73 @@ label
 
 .agent__button:active
   background-color #fee
+
+// navbar
+.navbar
+  width 100%
+  background-color #667266
+  display flex
+  padding 1rem 0
+  font-family sans-serif
+  color white
+.navbar__items
+  display flex
+  
+.navbar__items--right
+  margin-left auto
+  padding-right 1rem
+.navbar__link
+  padding-right .5rem
+  color white
+.navbar__link-toggle
+  display none
+.navbar__link--active
+  font-weight 800
+  color #ccc
+.navbar__link-brand
+  padding-left 1rem
+  font-size 1.25rem
+
+.navbar__toggle-button::after
+  content ""
+  background-color white
+  height .25rem
+  width 2rem
+  position absolute
+  top 200%
+  width 100%
+  left 0
+
+
+@media only screen and (max-width 768px)
+  .navbar__items, .navbar
+    flex-direction column
+  .navbar__items
+    display none
+  .navbar__items--right
+    margin-left 0
+  .navbar__link-toggle
+    align-self flex-end
+    padding .5rem 2rem
+    display initial
+    position absolute
+    cursor pointer
+  .navbar__toggle--show
+    display flex
+.navbar__toggle-button
+   background-color white
+   height .25rem
+   width 2rem
+   position absolute
+   top 45%
+   left 15%
+   transition all 1s ease
+.navbar__toggle-button::before
+  content ""
+  background-color white
+  height .25rem
+  width 2rem
+  position absolute
+  bottom 200%
+  width 100%
+  left 0
