@@ -73,6 +73,14 @@ class App extends Component {
     return Object.keys(this.state.queue.tickets).filter(ticket => this.state.queue.tickets[ticket].active);
   }
 
+  getWaitingTime = () => {
+    const activeQueue = this.getActiveQueue();
+    if (activeQueue.length > 0) {
+      return Math.floor((Date.now() - this.state.queue.tickets[activeQueue[0]].start) / 1000 / 60);
+    }
+    return 0;
+  }
+
   showNextServedTicket = () => {
     const activeQueue = this.getActiveQueue();
     if (activeQueue.length > 0) {
@@ -111,6 +119,7 @@ class App extends Component {
               addToQueue={this.addToQueue}
               getActiveQueue={this.getActiveQueue}
               getLargestNumber={this.getLargestNumber}
+              getWaitingTime={this.getWaitingTime}
             />
           </Route>
         </Switch>

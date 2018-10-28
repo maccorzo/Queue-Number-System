@@ -26,7 +26,7 @@ class Machine extends React.Component {
             Take this ticket</button>
           <div>Queue: {this.props.getActiveQueue().length}</div>
           <div>
-            Waiting time:
+            Waiting time: {this.props.getWaitingTime()} min
           </div>
         </form>
       </div >
