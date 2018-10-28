@@ -19,15 +19,15 @@ class Machine extends React.Component {
     return (
       <div>
         <form onSubmit={this.createNewTicket} className="machine">
-          <button type="submit" className="machine__button">
-            <div className="machine__number">
-              {formatNumber(this.props.queue.largestNumber)}
-            </div>
-            Take this ticket</button>
-          <div>Queue: {this.props.getActiveQueue().length}</div>
-          <div>
+          <div>Queue: {this.props.getActiveQueue().length},
             Waiting time: {this.props.getWaitingTime()} min
           </div>
+          <div className="machine__number">
+            {formatNumber(this.props.queue.largestNumber)}
+          </div>
+          <button type="submit" className="machine__button">
+            Take ticket
+          </button>
         </form>
       </div >
     )
