@@ -1,4 +1,5 @@
 import React from 'react';
+import { formatNumber } from '../helpers'
 
 class Machine extends React.Component {
 
@@ -18,15 +19,15 @@ class Machine extends React.Component {
     return (
       <div>
         <form onSubmit={this.createNewTicket} className="machine">
-          <div>Number</div>
+          <div>Queue: {this.props.getActiveQueue().length},
+            Waiting time: {this.props.getWaitingTime()} min
+          </div>
           <div className="machine__number">
-            {this.props.queue.largestNumber}
+            {formatNumber(this.props.queue.largestNumber)}
           </div>
-          <button type="submit" className="machine__button">Take a new number</button>
-          <div>Queue: {this.props.getActiveQueue().length}</div>
-          <div>
-            Waiting time:
-          </div>
+          <button type="submit" className="machine__button">
+            Take ticket
+          </button>
         </form>
       </div >
     )
