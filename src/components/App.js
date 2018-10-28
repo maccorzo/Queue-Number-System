@@ -96,7 +96,11 @@ class App extends Component {
         <Navigation />
         <Switch>
           <Route exact path="/">
-            <button onClick={this.initializeSystem}>initialize</button>
+            <div>
+              {!this.state.queue &&
+                <button onClick={this.initializeSystem}>initializfsddfe</button>
+              }
+            </div>
           </Route>
           <Route exact path="/board">
             <Board
@@ -123,7 +127,7 @@ class App extends Component {
             />
           </Route>
         </Switch>
-      </div>
+      </div >
     );
   }
 }
