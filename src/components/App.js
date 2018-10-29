@@ -97,8 +97,8 @@ class App extends Component {
         <Switch>
           <Route exact path="/">
             <div>
-              {!this.state.queue &&
-                <button onClick={this.initializeSystem}>initializfsddfe</button>
+              {!this.state.queue.tickets &&
+                <button onClick={this.initializeSystem}>initialize</button>
               }
             </div>
           </Route>
