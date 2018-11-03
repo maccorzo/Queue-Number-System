@@ -12,8 +12,8 @@ html, body
   padding 0
 a
   text-decoration none
-a:hover
-  text-decoration underline $accentColor
+  &:hover
+    text-decoration underline $accentColor
 
 button
   background-color $darkPrimaryColor
@@ -22,12 +22,12 @@ button
   border none
   border-radius 10px
 
-button:hover
-  background-color darken($darkPrimaryColor, 20%)
-  cursor pointer
+  &:hover
+    background-color darken($darkPrimaryColor, 20%)
+    cursor pointer
 
-button:active
-  background-color $darkPrimaryColor
+  &:active
+    background-color $darkPrimaryColor
 
 .App
   font-family 'Avenir', Helvetica, Arial, sans-serif
