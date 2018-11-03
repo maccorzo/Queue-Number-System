@@ -13,7 +13,7 @@ class Navigation extends React.Component {
       <div className="navbar">
         <div className="navbar__link navbar__link-brand">
           Queue Number Machine
-      </div>
+        </div>
         <div className="navbar__link navbar__link-toggle" onClick={this.toggleMenu}>
           <div className="navbar__toggle-button"></div>
         </div>

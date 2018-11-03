@@ -10,9 +10,10 @@ class Agent extends React.Component {
   render() {
     return (
       <form className="agent" onSubmit={this.serveNextTicket}>
-        <div>Next </div>
-        <div className="agent__input" id="next">{formatNumber(this.props.showNextServedTicket())}</div>
-        <div>Queue</div><div>{this.props.getActiveQueue().length}</div>
+        <div className="agent__info">
+          <span>Next: {formatNumber(this.props.showNextServedTicket())}, </span>
+          <span>Queue: {this.props.getActiveQueue().length}</span>
+        </div>
         <button className="agent__button" type="submit">Take the next customer</button>
       </form >
     )

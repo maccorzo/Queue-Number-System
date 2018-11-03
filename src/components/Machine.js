@@ -19,8 +19,13 @@ class Machine extends React.Component {
     return (
       <div>
         <form onSubmit={this.createNewTicket} className="machine">
-          <div>Queue: {this.props.getActiveQueue().length},
-            Waiting time: {this.props.getWaitingTime()} min
+          <div className="machine__info">
+            <span>
+              Queue: {this.props.getActiveQueue().length},
+            </span>
+            <span>
+              Waiting time: {this.props.getWaitingTime()} min
+            </span>
           </div>
           <div className="machine__number">
             {formatNumber(this.props.queue.largestNumber)}
