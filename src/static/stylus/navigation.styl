@@ -30,15 +30,7 @@
   padding-left 1rem
   font-size 1.75rem
 
-.navbar__toggle-button::after
-  content ""
-  background-color white
-  height .25rem
-  width 2rem
-  position absolute
-  top 200%
-  width 100%
-  left 0
+
 
 @media only screen and (max-width 768px)
   .navbar__items, .navbar
@@ -74,5 +66,18 @@
     width 2rem
     position absolute
     bottom 200%
+    width 100%
+    left 0
+  .navbar__toggle-button--open
+    transform rotate(90deg)
+
+
+  .navbar__toggle-button::after
+    content ""
+    background-color white
+    height .25rem
+    width 2rem
+    position absolute
+    top 200%
     width 100%
     left 0
