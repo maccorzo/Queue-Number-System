@@ -6,6 +6,17 @@ class Navigation extends React.Component {
   toggleMenu() {
     const navs = document.querySelectorAll('.navbar__items');
     navs.forEach(nav => nav.classList.toggle('navbar__toggle--show'))
+
+    const hamburger = document.querySelector('.navbar__link-toggle');
+    hamburger.classList.toggle('navbar__toggle--open')
+
+
+
+  }
+  closeHamburgerMenu = () => {
+    if (window.innerWidth <= 768) {
+      this.toggleMenu();
+    }
   }
   render() {
 
@@ -18,9 +29,9 @@ class Navigation extends React.Component {
           <div className="navbar__toggle-button"></div>
         </div>
         <nav className="navbar__items navbar__items--right">
-          <NavLink to="/board" activeClassName="navbar__link--active" className="navbar__link">Board</NavLink>
-          <NavLink to="/machine" activeClassName="navbar__link--active" className="navbar__link">Machine</NavLink>
-          <NavLink to="/agent" activeClassName="navbar__link--active" className="navbar__link">Agent</NavLink>
+          <NavLink to="/board" activeClassName="navbar__link--active" className="navbar__link" onClick={this.closeHamburgerMenu}>Board</NavLink>
+          <NavLink to="/machine" activeClassName="navbar__link--active" className="navbar__link" onClick={this.closeHamburgerMenu}>Machine</NavLink>
+          <NavLink to="/agent" activeClassName="navbar__link--active" className="navbar__link" onClick={this.closeHamburgerMenu}>Agent</NavLink>
         </nav>
       </div>
 

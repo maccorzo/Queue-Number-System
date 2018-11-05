@@ -49,8 +49,11 @@
     display initial
     position absolute
     cursor pointer
+    transition all .125s ease
   .navbar__toggle--show
     display flex
+  .navbar__toggle--open
+    transform rotate(0.25turn) translate(5px)
   .navbar__toggle-button
     background-color white
     height .25rem
@@ -58,7 +61,6 @@
     position absolute
     top 45%
     left 15%
-    transition all 1s ease
   .navbar__toggle-button::before
     content ""
     background-color white
@@ -68,10 +70,6 @@
     bottom 200%
     width 100%
     left 0
-  .navbar__toggle-button--open
-    transform rotate(90deg)
-
-
   .navbar__toggle-button::after
     content ""
     background-color white
