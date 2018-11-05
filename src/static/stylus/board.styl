@@ -1,0 +1,31 @@
+.board
+  display grid
+  grid-template-rows auto 1fr auto
+  height 100%
+  margin 0
+  padding 0
+
+.board__title
+  font-size 10vh
+  margin-top 1rem
+
+.board__active-number
+  color: $primaryTextColor
+  font-family "Exo 2"
+  font-size 33vh
+  text-align center
+  border 0
+  margin 0
+  padding 0
+  width 100%
+
+@media only screen and (max-width 628px)
+  .board__title
+    font-size 8vh
+  .board__active-number
+    font-size 25vh
+@media only screen and (max-width 490px)
+  .board__title
+    font-size 6vh
+  .board__active-number
+    font-size 20vh

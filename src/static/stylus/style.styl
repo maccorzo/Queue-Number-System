@@ -1,9 +1,34 @@
 @import url('https://fonts.googleapis.com/css?family=Exo+2');
+@import url('https://fonts.googleapis.com/css?family=Rubik');
 
-// leave in this file 
+@import 'variables'
+@import 'navigation'
+@import 'agent'
+@import 'machine'
+@import 'board'
+
 html, body
   margin 0
   padding 0
+a
+  text-decoration none
+  &:hover
+    text-decoration underline $accentColor
+
+button
+  background-color $darkPrimaryColor
+  color white
+  padding 1rem
+  border none
+  border-radius 10px
+
+  &:hover
+    background-color darken($darkPrimaryColor, 20%)
+    cursor pointer
+
+  &:active
+    background-color $darkPrimaryColor
+
 .App
   font-family 'Avenir', Helvetica, Arial, sans-serif
   display grid
@@ -15,176 +40,9 @@ html, body
   text-align center
 
 
-
-button
-  background-color #fff
-
-button:hover
-  cursor pointer
-
-
   /**
   -webkit-font-smoothing antialiased
   -moz-osx-font-smoothing grayscale
   color #2c3e50
   grid-template-rows auto 1fr
   **/
-
-// navigation.style
-
-.navigation > *
-  padding 10px
-
-
-// board.style
-
-.board
-  margin 0
-  padding 0
-.board__active-number
-  color: #232323
-  font-size 33vw
-  margin 0
-  padding 0
-  width 100%
-  text-align center
-  border 0
-  font-family Exo 2
-
-  // machine.style
-.machine
-  display grid
-  grid-gap 3rem
-  font-size 2rem
-.machine__number
-  background url("https://res.cloudinary.com/maccorzo/image/upload/v1539974724/qns/number.svg") no-repeat center center
-  height 210px
-  min-width 250px
-  text-align center
-  font-size 4rem
-  display flex
-  align-items center
-  justify-content center
-
-.machine__button
-  font-size 2rem
-  padding 1rem
-  border-radius 2px
-  box-shadow 0 1px 2px #555
-  border 2px solid #666
-
-button
-  border 0
-
-.machine__button:hover
-  background-color #eee
-
-  
-
-.machine__button:active
-  background-color #fee
-// agent.styl
-
-.agent
-  padding 0
-  margin 0
-  font-size 3rem
-  display grid
-  grid-template-columns: auto 1fr
-  grid-gap 1rem
-  justify-items end
-  
-label
-  justify-self left
-
-.agent__input
-  font-size 3rem
-  width 9rem
-  text-align right
-  border 0
-
-.agent__button
-  font-size 2rem
-  padding 1rem
-  border-radius 2px
-  border 2px solid #666
-  box-shadow 0 1px 2px #555
-  grid-column span 2
-
-.agent__button:hover
-  background-color #eee
-
-.agent__button:active
-  background-color #fee
-
-// navbar
-.navbar
-  width 100%
-  background-color #667266
-  display flex
-  padding 1rem 0
-  font-family sans-serif
-  color white
-.navbar__items
-  display flex
-  
-.navbar__items--right
-  margin-left auto
-  padding-right 1rem
-.navbar__link
-  padding-right .5rem
-  color white
-.navbar__link-toggle
-  display none
-.navbar__link--active
-  font-weight 800
-  color #ccc
-.navbar__link-brand
-  padding-left 1rem
-  font-size 1.25rem
-
-.navbar__toggle-button::after
-  content ""
-  background-color white
-  height .25rem
-  width 2rem
-  position absolute
-  top 200%
-  width 100%
-  left 0
-
-
-@media only screen and (max-width 768px)
-  .navbar__items, .navbar
-    flex-direction column
-  .navbar__items
-    display none
-  .navbar__items--right
-    margin-left 0
-  .navbar__link
-    padding .25rem 0
-  .navbar__link-toggle
-    align-self flex-end
-    padding .5rem 2rem
-    display initial
-    position absolute
-    cursor pointer
-  .navbar__toggle--show
-    display flex
-  .navbar__toggle-button
-    background-color white
-    height .25rem
-    width 2rem
-    position absolute
-    top 45%
-    left 15%
-    transition all 1s ease
-  .navbar__toggle-button::before
-    content ""
-    background-color white
-    height .25rem
-    width 2rem
-    position absolute
-    bottom 200%
-    width 100%
-    left 0

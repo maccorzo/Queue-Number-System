@@ -5,6 +5,7 @@ class Board extends React.Component {
   render() {
     return (
       <div className="board">
+        <span className="board__title">Now serving</span>
         <input
           type="text"
           className="board__active-number"
