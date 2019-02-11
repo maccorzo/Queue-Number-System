@@ -1,10 +1,14 @@
-import React from 'react';
-import { formatNumber } from '../helpers'
+import React, { MouseEvent } from 'react';
+import { formatNumber } from '../helpers';
 
-class Machine extends React.Component {
+interface Props {
+  queue: any;
+  addToQueue: any;
+  largestNumber: number;
+}
 
-
-  createNewTicket = event => {
+class Machine extends React.Component<Props, {}> {
+  createNewTicket = (event: any): void => {
     event.preventDefault();
     const number = {
       active: true,
@@ -12,21 +16,13 @@ class Machine extends React.Component {
       start: Date.now(),
       stop: 0,
       waitingTime: 0,
-    }
+    };
     this.props.addToQueue(number);
-  }
+  };
   render() {
     return (
       <div>
         <form onSubmit={this.createNewTicket} className="machine">
-          <div className="machine__info">
-            <span>
-              Queue: {this.props.getActiveQueue().length},
-            </span>
-            <span>
-              Waiting time: {this.props.getWaitingTime()} min
-            </span>
-          </div>
           <div className="machine__number">
             {formatNumber(this.props.queue.largestNumber)}
           </div>
@@ -34,9 +30,9 @@ class Machine extends React.Component {
             Take ticket
           </button>
         </form>
-      </div >
-    )
+      </div>
+    );
   }
 }
 
-export default Machine
+export default Machine;

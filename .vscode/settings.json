@@ -1,0 +1,10 @@
+{
+  "workbench.colorCustomizations": {
+    "titleBar.activeForeground": "#fff",
+    "titleBar.inactiveForeground": "#fff",
+    "titleBar.activeBackground": "#666FAF",
+    "titleBar.inactiveBackground": "#ADADAD"
+  },
+  "prettier.singleQuote": true,
+  "prettier.trailingComma": "all"
+}
